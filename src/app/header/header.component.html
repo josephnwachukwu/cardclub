@@ -1,0 +1,59 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" routerLink="/"  (click)="isOpen = !isOpen">
+        <img src="assets/images/logo-dark.png" width="160" height="40">
+      </a>
+  
+      <a role="button" class="navbar-burger" (click)="isOpen = !isOpen" [class.is-active]="isOpen" aria-label="menu" aria-expanded="isOpen" data-target="cardClubMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="cardClubMenu" class="navbar-menu">
+
+    </div>
+    <div class="navbar-menu"  [class.is-active]="isOpen">
+        <div class="navbar-start">
+              <a class="navbar-item" routerLink="/pricing"  (click)="isOpen = !isOpen">
+                <i class="fas fa-dollar-sign"></i> Pricing &amp; Featrues
+              </a>
+
+              <a class="navbar-item" routerLink="/help"  (click)="isOpen = !isOpen">
+                <i class="fas fa-info-circle"></i> Help
+              </a>
+
+              <a class="navbar-item" routerLink="/company"  (click)="isOpen = !isOpen">
+                <i class="far fa-building"></i> About Us
+              </a>
+        </div>
+        <div *ngIf="auth.user | async as user; then authenticated else guest"></div>
+    </div>
+  </nav>
+
+  <ng-template #guest>
+    <div class="navbar-end">
+      <a class="navbar-item" routerLink="/login"  (click)="isOpen = !isOpen">
+        <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+  
+        <a class="navbar-item" routerLink="/register"  (click)="isOpen = !isOpen">
+          <i class="fas fa-user-plus"></i> Sign Up <strong>Free!</strong>
+        </a>
+    </div>
+  </ng-template>
+
+  <ng-template #authenticated>
+    <div class="navbar-end" *ngIf="auth.user | async as user">
+      <a class="navbar-item" routerLink="/userprofile"  (click)="isOpen = !isOpen">
+        <i class="far fa-user-circle"></i> {{ user.firstName }} {{ user.lastName }} 
+        </a>
+        <a class="navbar-item" routerLink="/card" (click)="isOpen = !isOpen">
+          <i class="far fa-id-card"></i> My Card
+        </a>
+        <a class="navbar-item"  (click)="logout();isOpen = !isOpen; ">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+    </div>
+  </ng-template>

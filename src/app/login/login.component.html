@@ -1,0 +1,58 @@
+<section class="section main-container">
+    <div class="columns is-centered">
+        <div class="column is-6">
+            <div class="box">
+              <div class="columns is-mobile">
+                <div class="column is-3">
+                  <img src="assets/images/secure-night.svg" />
+                </div>
+                <div class="column is-9">
+                  <h4 class="is-size-4">Sign In</h4>
+                </div>
+              </div>
+
+              <div class="notification is-danger" *ngIf="serverMessage">
+                <button class="delete"></button>
+                {{serverMessage}}
+              </div>
+                
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input formControlName="email" class="input" type="text" placeholder="Joey Stark">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                          <span class="icon is-small is-right" *ngIf="email?.valid">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input formControlName="password" class="input" type="password">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                          <span class="icon is-small is-right" *ngIf="password?.valid">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <div class="control">
+                          <button type="submit" class="button is-link is-fullwidth">Log In</button>
+                        </div>
+                    </div>
+                    <p>
+                        Don&apos;t have an account? Register <a  routerLink="/register">here</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

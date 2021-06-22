@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bulma/css/bulma.min.css';
+
+body {
+    height: 100vh;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+.main-container {
+    display: block !important;
+    overflow: auto !important;
+    height: fit-content;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    min-height:100vh;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    height:150px;
+}
+
+.white-bg {
+    background-color: white;
+}

@@ -1,0 +1,250 @@
+<section class="section main-container" *ngFor="let user of displayedUser |async">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6">
+          <div class="columns is-mobile">
+            <div class="column is-4">
+              <figure class="image is-128X128">
+                <img class="is-rounded" src="{{user.photoURL}}">
+              </figure>
+            </div>
+            <div class="column is-8 has-text-white">
+              <h4 class="title is-4 has-text-white name">{{user.firstName}}   {{user.lastName}}</h4>
+              <p class="has-text-white">{{user.jobTitle}}</p>
+            </div>
+          </div>
+          <div class="columns is-mobile is-centered" *ngIf="false">
+            <div class="column is-4 has-text-centered-mobile">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+            </div>
+            <div class="column is-4">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+            </div>
+            <div class="column is-4">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <!-- <div class="media">
+                <div class="media-left">
+                  <figure class="image is-rounded is-48x48">
+                    <img class="is-rounded" src="{{user.photoURL}}" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                 <p class="title is-4">{{user.firstName}}   {{user.lastName}}</p>
+                  <p class="subtitle is-6">@{{user.userName}}</p>
+                </div>
+              </div> -->
+              <div class="content">
+                {{user.bio}}
+                <br>
+                <hr>
+  
+                <div class="buttons are-small is-centered">
+                  <a class="button" href="tel:{{user.phoneNumber}}" *ngIf="user.displayPhoneNumber">
+                    <span class="icon">
+                      <i class="fas fa-phone-alt"></i>
+                    </span>
+                    <span>
+                      Call
+                    </span>
+                  </a>
+                  <a class="button" href="sms:{{user.textNumber}}" *ngIf="user.displayTextNumber">
+                    <span class="icon">
+                      <i class="fas fa-comment-alt"></i>
+                    </span>
+                    <span>
+                      Text 
+                    </span>
+                  </a>
+                  <a class="button" href="mailTo:{{user.profileEmail}}" *ngIf="user.displayProfileEmail">
+                    <span class="icon">
+                      <i class="far fa-envelope"></i>
+                    </span>
+                    <span>
+                      Email
+                    </span>
+                  </a>
+                </div>
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasFacebook">
+                  <span class="icon">
+                    <i class="fab fa-facebook"></i>
+                  </span>
+                  <span>{{user.socialMedia?.facebook}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasTwitter">
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>{{user.socialMedia.twitter}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasInstagram">
+                  <span class="icon">
+                    <i class="fab fa-instagram"></i>
+                  </span>
+                  <span>{{user.socialMedia.instagram}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasBlog">
+                  <span class="icon">
+                    <i class="fab fa-wordpress"></i>
+                  </span>
+                  <span>{{user.socialMedia.blog}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasLinkedin">
+                  <span class="icon">
+                    <i class="fab fa-linkedin"></i>
+                  </span>
+                  <span>{{user.socialMedia.linkedin}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasSkype">
+                  <span class="icon">
+                    <i class="fab fa-skype"></i>
+                  </span>
+                  <span>{{user.socialMedia.skype}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasSlack">
+                  <span class="icon">
+                    <i class="fab fa-slack"></i>
+                  </span>
+                  <span>{{user.socialMedia.slack}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasWhatsapp">
+                  <span class="icon">
+                    <i class="fab fa-whatsapp"></i>
+                  </span>
+                  <span>{{user.socialMedia.whatsapp}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasTwitch">
+                  <span class="icon">
+                    <i class="fab fa-twitch"></i>
+                  </span>
+                  <span>{{user.socialMedia.twitch}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasTikTok">
+                  <span class="icon">
+                    <i class="fab fa-tiktok"></i>
+                  </span>
+                  <span>{{user.socialMedia.tiktok}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasSoundCloud">
+                  <span class="icon">
+                    <i class="fab fa-soundcloud"></i>
+                  </span>
+                  <span>{{user.socialMedia.soundcloud}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasSnapchat">
+                  <span class="icon">
+                    <i class="fab fa-snapchat"></i>
+                  </span>
+                  <span>{{user.socialMedia.snapchat}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasMedium">
+                  <span class="icon">
+                    <i class="fab fa-medium"></i>
+                  </span>
+                  <span>{{user.socialMedia.medium}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasTumblr">
+                  <span class="icon">
+                    <i class="fab fa-tumblr"></i>
+                  </span>
+                  <span>{{user.socialMedia.tumblr}}</span>
+                </button>
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasPinterest">
+                  <span class="icon">
+                    <i class="fab fa-pinterest"></i>
+                  </span>
+                  <span>{{user.socialMedia.pinterest}}</span>
+                </button>
+  
+                
+  
+                <button class="button is-fullwidth is-medium" *ngIf="user.socialMedia.hasYoutube">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>{{user.socialMedia.youtube}}</span>
+                </button>
+
+                <hr>
+                <a class="link" target="_blank" href="{{user.resumeLocation}}" *ngIf="user.hasResume">View My Resume</a>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="columns is-mobile is-centered">
+            <div class="column is-3">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+            </div>
+            <div class="column is-3">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+            </div>
+            <div class="column is-3">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+            </div>
+            <div class="column is-3">
+              <figure class="image is-64x64">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

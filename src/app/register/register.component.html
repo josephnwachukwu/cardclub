@@ -1,0 +1,124 @@
+<section class="section main-container">
+    <div class="columns is-centered">
+        <div class="column is-6">
+            <div class="box">
+              <div class="columns is-mobile">
+                <div class="column is-3">
+                  <img src="assets/images/study-night.svg" />
+                </div>
+                <div class="column is-9">
+                  <h4 class="is-size-4">Create An Account for Free!</h4>
+                </div>
+              </div>
+                
+                <p>Register today and start sending your profile today.</p>
+                <hr>
+                <div class="notification is-danger" *ngIf="showMessage">
+                  <button class="delete"></button>
+                  {{serverMessage}}
+                </div>
+                
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                  <div class="field">
+                    <label class="label">UserName</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input formControlName="userName" class="input" type="text">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-at"></i>
+                      </span>
+                      <span class="icon is-small is-right" *ngIf="userName?.valid">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                    <div class="field">
+                        <label class="label">First Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input formControlName="firstName" class="input" type="text" placeholder="Joey">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                          </span>
+                          <span class="icon is-small is-right" *ngIf="firstName?.valid">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">Last Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input formControlName="lastName" class="input" type="text" placeholder="Stark">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                          </span>
+                          <span class="icon is-small is-right" *ngIf="lastName?.valid">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input formControlName="email" class="input" type="email" placeholder="Joey.Stark@gmail.com">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                          <span class="icon is-small is-right" *ngIf="email?.valid">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input formControlName="password" class="input" type="password">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                          <span class="icon is-small is-right" *ngIf="password?.valid">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                        <p class="help is-danger"  *ngIf="password?.invalid && password?.dirty">password must be at least 8 characters!</p>
+                      </div>
+
+                      <div class="field">
+                        <label class="label">Confirm Password</label>
+                        <div class="control has-icons-left has-icons-right">
+                          <input formControlName="passwordConfirm" class="input" type="password">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                          <span class="icon is-small is-right" *ngIf="passwordConfirm?.valid && passwordConfirm?.dirty && passwordDoesMatch">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </div>
+                        <p class="help is-danger"  *ngIf="passwordConfirm?.dirty && !passwordDoesMatch">passwords do not match!</p>
+                      </div>
+
+                      
+
+                      <div class="field">
+                        <div class="control">
+                          <label class="checkbox"> 
+                            <input formControlName="terms" type="checkbox">
+                            I agree to the <a routerLink="/tos">terms and conditions</a>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <div class="control">
+                          <button type="submit" class="button is-link is-fullwidth" [disabled]="!registerForm.valid">Register</button>
+                        </div>
+                    </div>
+                    <p>
+                        Already have an account? Log in  <a routerLink="/login" >here</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

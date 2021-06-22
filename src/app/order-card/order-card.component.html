@@ -1,0 +1,208 @@
+<section class="section main-container">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-6">
+                <div class="box">
+                    <h4 class="title is-4">Order Your Card today</h4>
+                    <p></p>
+                    <hr>
+                    
+                    <hr>
+                    
+                    <hr>
+                    <div class="columns is-mobile">
+                        <div class="column is-8">
+
+                        </div>
+                        <div class="column is-4">
+                            <figure class="image is-256x256">
+                                <img src="/assets/images/wallet-night.svg" />
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="columns is-mobile">
+                        <div class="column is-3">
+                            <figure class="image is-256x256">
+                                <img src="/assets/images/fast-night.svg" />
+                            </figure>
+                        </div>
+                        <div class="column is-9">
+                            
+                        </div>
+                    </div>
+                    <div class="columns is-mobile">
+                        <div class="column is-9">
+
+                        </div>
+                        <div class="column is-3">
+                            <figure class="image is-256x256">
+                                <img src="/assets/images/credit-card-night.svg" />
+                            </figure>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <figure class="image is-256x256">
+                        <img src="/assets/images/kit1-1-night.svg" />
+                    </figure>
+                    <hr>
+                    <figure class="image is-256x256">
+                        <img src="/assets/images/drawing-3-night.svg" />
+                    </figure>
+                    <hr>
+                    <h4 class="title is-4">Our Products</h4>
+                    <figure class="image is-256x256">
+                        <img src="/assets/images/pvc-card-front-sample.jpg" />
+                    </figure>
+
+                    <figure class="image is-256x256">
+                        <img src="/assets/images/metal-card-front-sample.jpg" />
+                    </figure>
+
+                    <hr>
+                    <div id="stamped-main-widget" 
+                        data-product-id="##product.id##" 
+                        data-name="##product.title##" 
+                        data-url="resume-for.me/card" 
+                        data-image-url="##product.image##" 
+                        data-description="##product.description##" 
+                        data-product-sku="##product.handle##"> 
+                    </div>
+                    <hr>
+
+                    <div class="tabs is-toggle is-toggle-rounded is-centered">
+                        <ul>
+                          <li [class.is-active]="activeTab === 'benefits'" (click)="activeTab = 'benefits'">
+                            <a>
+                              <span>Benefits</span>
+                            </a>
+                          </li>
+                          <li [class.is-active]="activeTab === 'specs'" (click)="activeTab = 'specs'">
+                            <a>
+                              <span>Product Specs</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="box" *ngIf="activeTab === 'benefits'">
+                        <ul>
+                            <li>
+
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                      </div>
+
+                      <div class="box" *ngIf="activeTab === 'specs'">
+
+                      </div>
+
+                      <article class="message">
+                        <div class="message-header">
+                          <p>Compatible With:</p>
+                        </div>
+                        <div class="message-body">
+                          <div class="columns is-mobile">
+                              <div class="column is-6">
+                                  <br>
+                                <figure class="image is-256x256">
+                                    <img src="/assets/images/ios-logo-300x146.png" />
+                                </figure>
+                                
+                              </div>
+                              <div class="column is-6">
+                                <figure class="image is-256x256">
+                                    <img src="/assets/images/android-10.png" />
+                                </figure>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+
+                    <form>
+
+                        <div class="field">
+                            <div class="control">
+                                {{order.cardType}}
+                                <label class="radio">
+                                <input [(ngModel)]="order.cardType" value="plastic" type="radio" (click)="renderButton()" name="cardType">
+                                Plastic
+                                </label>
+                                <label class="radio">
+                                <input [(ngModel)]="order.cardType" value="metal" type="radio" (click)="renderButton()"  name="cardType">
+                                Metal
+                                </label>
+                            </div>
+                        </div>
+
+                        <div #paypal></div>
+
+                        <hr>
+                        <div [hidden]='true'>
+                        <h5 class="title is-5">Shipping Address</h5>
+
+                          <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control">
+                              <input class="input" [(ngModel)]="order.name" type="text" name="name" placeholder="Joey Stark">
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">Address 1</label>
+                            <div class="control">
+                              <input class="input" [(ngModel)]="order.address.address1" name="address.address1" type="text" placeholder="123 anywhere place">
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">Address 2</label>
+                            <div class="control">
+                              <input class="input" [(ngModel)]="order.address.address2" name="address.address2" type="text" placeholder="apt 2">
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">City</label>
+                            <div class="control">
+                              <input class="input" [(ngModel)]="order.address.city" name="address.city"  type="text" placeholder="Text input">
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">State</label>
+                            <div class="control">
+                              <div class="select">
+                                <select [(ngModel)]="order.address.state" name="address.state">
+                                  <option>Select dropdown</option>
+                                  <option>With options</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">Zip Code</label>
+                            <div class="control">
+                              <input class="input" [(ngModel)]="order.address.zipcode" name="address.zipcode" type="text" placeholder="Text input">
+                            </div>
+                          </div>
+
+                          <div class="field is-grouped">
+                            <div class="control">
+                              <button class="button is-link">Submit</button>
+                            </div>
+                            <div class="control">
+                              <button class="button is-link is-light">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
