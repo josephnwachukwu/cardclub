@@ -32,6 +32,8 @@ import { CompanyComponent } from './company/company.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { RegisterConfirmationComponent } from './register-confirmation/register-confirmation.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductsComponent } from './products/products.component';
+import { ViewproductComponent } from './viewproduct/viewproduct.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     OrderConfirmationComponent,
     RegisterConfirmationComponent,
     DashboardComponent,
+    ProductsComponent,
+    ViewproductComponent,
   ],
   imports: [
     BrowserModule,

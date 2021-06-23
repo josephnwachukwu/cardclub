@@ -1,4 +1,4 @@
-<section class="section main-container" *ngFor="let user of displayedUser |async">
+<section class="section main-container" [className]="'section main-container ' + currentClass" *ngFor="let user of displayedUser |async">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-6">
@@ -225,22 +225,22 @@
           <div class="columns is-mobile is-centered">
             <div class="column is-3">
               <figure class="image is-64x64">
-                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                <img class="is-rounded" src="/assets/images/facebook-icon.png">
               </figure>
             </div>
             <div class="column is-3">
               <figure class="image is-64x64">
-                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                <img class="is-rounded" src="/assets/images/instagram-icon.png">
               </figure>
             </div>
             <div class="column is-3">
               <figure class="image is-64x64">
-                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                <img class="is-rounded" src="/assets/images/twitter-icon.png">
               </figure>
             </div>
             <div class="column is-3">
               <figure class="image is-64x64">
-                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                <img class="is-rounded" src="/assets/images/snapchat-icon.png">
               </figure>
             </div>
           </div>

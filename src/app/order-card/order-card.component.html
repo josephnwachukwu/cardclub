@@ -126,7 +126,6 @@
 
                         <div class="field">
                             <div class="control">
-                                {{order.cardType}}
                                 <label class="radio">
                                 <input [(ngModel)]="order.cardType" value="plastic" type="radio" (click)="renderButton()" name="cardType">
                                 Plastic
@@ -137,6 +136,7 @@
                                 </label>
                             </div>
                         </div>
+                        
 
                         <div #paypal></div>
 

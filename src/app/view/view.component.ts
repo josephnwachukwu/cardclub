@@ -13,7 +13,8 @@ import { User } from '../models/user.model';
 export class ViewComponent implements OnInit {
   userName: string | null |undefined;
   //user:any
-  displayedUser: any
+  displayedUser: any;
+  currentClass:string = 'dark'
   constructor(public auth: AuthService, private route:ActivatedRoute, private db: AngularFirestore) { 
     
   }
